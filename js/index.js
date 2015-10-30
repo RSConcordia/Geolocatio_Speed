@@ -9,7 +9,7 @@
 		element.innerHTML = 'Latitude: '  + position.coords.latitude      + '<br />' +
 							'Longitude: ' + position.coords.longitude     + '<br />' +
 							'Spees: ' 	  + position.coords.speed         + '<br />' +
-							'<hr />'      + element.innerHTML;
+							'<hr />' ;
 	};					
 	function onError(error) {
 		alert('code: '    + error.code    + '\n' +
