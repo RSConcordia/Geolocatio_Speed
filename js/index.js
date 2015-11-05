@@ -8,7 +8,7 @@
 		var element = document.getElementById('geolocation');
 		element.innerHTML = 'Latitude: '  + position.coords.latitude      + '<br />' +
 							'Longitude: ' + position.coords.longitude     + '<br />' +
-							'Spees: ' 	  + position.coords.speed         + '<br />' +
+							'Speed: ' 	  + position.coords.speed         + '<br />' +
 							'<hr />' ;
 	};					
 	function onError(error) {
