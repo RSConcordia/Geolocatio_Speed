@@ -2,6 +2,7 @@
 		
 	};	
 	function geolocation(){ 
+			alert(';)');
 			var watchId = navigator.geolocation.watchPosition(onSuccess, onError, { enableHighAccuracy: true });
 		};	
 	function onSuccess(position) {
