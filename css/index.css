@@ -1,16 +1,44 @@
 body { 
-    text-align: center;
+    text-align: center;	
+	font-family: Comic Sans MS;
+	background-color: #4de7ff;
 }
 
 button{
-	width: 150px;
-	height: 45px;
+	outline: none;
 	font-size: 25px;
-	margin: 1em 1em 1em 1em;
+	font-family: Comic Sans MS;
+	padding: 1em 1em 1em 1em;
+	border: none;
+	border-radius: 60px;
+	background-color: #33e4ff;
+	color: #fff;	
+	box-shadow: 1px 1px 2px #00c7e6, -1px -1px 2px #b3f5ff;
+}
+
+button:active{
+	box-shadow: 1px 1px 2px #b3f5ff, -1px -1px 2px #00c7e6;	
+	background-color: #1ae0ff;
+	color: #ccf8ff;
+}
+
+label{
+	display: block;
+	margin-top: 5%;
+	text-align: center;	
+	color: #00c7e6;
+	text-shadow: 1px 1px 2px #f2f2f2;
+	font-family: Comic Sans MS;
 }
 
 a{ 
  text-decoration:none; 
  font-size: 30px;
- color: blue;
+ color: #00aeff;
 } 
+
+h2{
+	color: #00c7e6;
+	text-shadow: 1px 1px 2px #f2f2f2;
+	font-family: Comic Sans MS;
+}
