@@ -25,22 +25,23 @@
 			var watchID = navigator.geolocation.watchPosition(
 				function onSuccess(position)
 				{
-					alert("#Success");
 					status = "true;"+position.coords.latitude+","+position.coords.longitude+";"+position.coords.speed+";";
 				},
 				function onError(error)
 				{
-					alert("#Error");
 					status = "false;"+error.message+";";
 				},
 				{ enableHighAccuracy: true }
 			);
-		//	navigator.geolocation.clearWatch(watchID);
-			event(status);
+			
+			while(status != ""){
+				navigator.geolocation.clearWatch(watchID);
+				event(status);
+			}
 		},
 		
 		start: function(){
-			 app.getPosition(app.write);
+			app.getPosition(app.write);
 		},
 		
 		write: function(data)
