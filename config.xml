@@ -12,8 +12,7 @@
     Dotter do Brasil Ltda
     </author>
 	
-	<!--feature name="http://api.phonegap.com/1.0/geolocation"/>
-	<gap:plugin name="com.jmi2.cordova.geolocation" version="0.3.15" /-->
+	<plugin name="org.apache.cordova.geolocation" spec="0.3.12" source="pgb" />
     <gap:plugin name="org.apache.cordova.device" />
 		
 	<preference name="phonegap-version" value="cli-5.2.0" />
