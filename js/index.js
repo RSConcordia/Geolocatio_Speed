@@ -16,7 +16,6 @@
 							'message: ' + error.message ;
 	} */
 	
-	var n = 0;
 	var id, coords, options;
 	
 	var app = 
@@ -30,21 +29,16 @@
 		{			
 			function success(position)
 			{
-				console.log(n);
-				n++;
-				
 				coords = position.coords.latitude+","+position.coords.longitude+";"+position.coords.speed;
-	
 				app.write(coords);
-			//	navigator.geolocation.clearWatch(id);
 			};
 
 			function error(err)
 			{
-				console.warn('ERRO(' + err.code + '): ' + err.message);
+				alert('ERRO(' + err.code + '): ' + err.message);
 			};
 
-			options = {	enableHighAccuracy: false , timeout: 10000};
+			options = {	enableHighAccuracy: true , timeout: 10000};
 
 			id = navigator.geolocation.watchPosition(success, error, options);
 		},
