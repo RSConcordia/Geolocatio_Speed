@@ -32,6 +32,6 @@
 				alert('ERRO(' + err.code + '): ' + err.message);
 			};
 			
-			id = navigator.geolocation.watchPosition(success, error, { timeout: 10000 });
+			id = navigator.geolocation.getCurrentPosition(success, error, { timeout: 10000 });
 		}
 	};
