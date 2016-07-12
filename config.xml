@@ -12,6 +12,7 @@
     Dotter do Brasil Ltda
     </author>
 	
+	<feature name="http://api.phonegap.com/1.0/geolocation"/>
 	<gap:plugin name="com.jmi2.cordova.geolocation" version="0.3.15" />
     <gap:plugin name="org.apache.cordova.device" />
 		
@@ -22,7 +23,6 @@
     <preference name="webviewbounce"    value="false" />
 	<preference name="permissions" 		value="none"/>
 	
-	<feature name="http://api.phonegap.com/1.0/geolocation"/>
 	
     <content src="index.html" />
     <access origin="*" />

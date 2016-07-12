@@ -4,17 +4,13 @@
         <title>Geolocation</title>
 		<script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>	
-        <script type="text/javascript">
-            app.initialize();	
-        </script>
     </head>
     <body>
 		<br>
-           <h2> Geolocation Speed </h2>
-		<br>				       
-            <button onclick='geolocation()'>Get Speed</button> 		
+           <h2> Geolocation LatLon / Speed </h2>
 		<br>
-			<label id='geolocation'>
-			</label>
+			<button onclick="app.start()">Get Position</button>
+			<div id='status'>
+			</div>
     </body>
 </html>
