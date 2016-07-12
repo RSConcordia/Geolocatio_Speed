@@ -16,36 +16,22 @@
 							'message: ' + error.message ;
 	} */
 	
-	var id, coords, options;
+	var id;
 	
 	var app = 
 	{
-		load: function()
-		{
-			app.getPosition();
-		},
-	
 		getPosition: function()
 		{			
 			function success(position)
 			{
-				coords = position.coords.latitude+","+position.coords.longitude+";"+position.coords.speed;
-				app.write(coords);
+				document.getElementById("status").innerHTML += "<br>latlon: "+ position.coords.latitude+","+position.coords.longitude;
 			};
 
 			function error(err)
 			{
 				alert('ERRO(' + err.code + '): ' + err.message);
 			};
-
-			options = {	enableHighAccuracy: true , timeout: 10000};
-
-			id = navigator.geolocation.watchPosition(success, error, options);
-		},
-		
-		write: function(data)
-		{
-			data = data.split(";");
-			document.getElementById("status").innerHTML += "<br>latlon: "+data[0]+"<br> speed: "+data[1];
+			
+			id = navigator.geolocation.watchPosition(success, error, {	enableHighAccuracy: true , timeout: 10000});
 		}
 	};
