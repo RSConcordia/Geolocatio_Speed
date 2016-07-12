@@ -16,47 +16,42 @@
 							'message: ' + error.message ;
 	} */
 	
+	var n = 0;
+	var id, coords, options;
 	
 	var app = 
 	{
-		getPosition: function(event)
+		load: function()
 		{
-			var status = "";
-			var watchID = navigator.geolocation.watchPosition(
-				function onSuccess(position)
-				{
-					status = "true;"+position.coords.latitude+","+position.coords.longitude+";"+position.coords.speed+";";
-				},
-				function onError(error)
-				{
-					status = "false;"+error.message+";";
-				},
-				{ enableHighAccuracy: true }
-			);
-			
-			while(status != ""){
-				navigator.geolocation.clearWatch(watchID);
-				event(status);
-			}
+			app.getPosition();
 		},
-		
-		start: function(){
-			app.getPosition(app.write);
+	
+		getPosition: function()
+		{			
+			function success(position)
+			{
+				console.log(n);
+				n++;
+				
+				coords = position.coords.latitude+","+position.coords.longitude+";"+position.coords.speed;
+	
+				app.write(coords);
+			//	navigator.geolocation.clearWatch(id);
+			};
+
+			function error(err)
+			{
+				console.warn('ERRO(' + err.code + '): ' + err.message);
+			};
+
+			options = {	enableHighAccuracy: false , timeout: 10000};
+
+			id = navigator.geolocation.watchPosition(success, error, options);
 		},
 		
 		write: function(data)
 		{
-			var field = document.getElementById("status");
 			data = data.split(";");
-			
-			if(data[0] == "true")
-			{
-				field.innerHTML = "<b>Lat|Lon: </b>"+ data[1] +" <b>Speed:</b> "+data[2];
-			}
-			else{
-				field.innerHTML = "<b>Error: </b>"+ data[1];
-			}		
-		},
+			document.getElementById("status").innerHTML += "<br>latlon: "+data[0]+"<br> speed: "+data[1];
+		}
 	};
-	
-	

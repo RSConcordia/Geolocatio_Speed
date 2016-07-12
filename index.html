@@ -9,7 +9,8 @@
 		<br>
            <h2> Geolocation LatLon / Speed </h2>
 		<br>
-			<button onclick="app.start()">Get Position</button>
+			<button onclick="app.getPosition()">Initialize</button>
+			<button onclick="navigator.geolocation.clearWatch(id)">Stop</button>
 			<div id='status' style="margin-top:5%; color: #fff">
 			</div>
     </body>
