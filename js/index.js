@@ -19,7 +19,7 @@
 	
 	var app = 
 	{
-		getPosition: function()
+		getPosition: function(event)
 		{
 			var status = "";
 			var watchID = navigator.geolocation.watchPosition(
@@ -36,14 +36,17 @@
 				{ enableHighAccuracy: true }
 			);
 		//	navigator.geolocation.clearWatch(watchID);
-			return status;
+			event(status);
 		},
 		
 		start: function(){
-			var field = document.getElementById("status");
+			 app.getPosition(app.write);
+		},
 		
-			var data = app.getPosition();
-				data = data.split(";");
+		write: function(data)
+		{
+			var field = document.getElementById("status");
+			data = data.split(";");
 			
 			if(data[0] == "true")
 			{
@@ -51,7 +54,7 @@
 			}
 			else{
 				field.innerHTML = "<b>Error: </b>"+ data[1];
-			}
+			}		
 		},
 	};
 	
