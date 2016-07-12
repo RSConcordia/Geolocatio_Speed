@@ -35,7 +35,7 @@
 				},
 				{ enableHighAccuracy: true }
 			);
-			navigator.geolocation.clearWatch(watchID);
+		//	navigator.geolocation.clearWatch(watchID);
 			return status;
 		},
 		
